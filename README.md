@@ -33,7 +33,7 @@ IDE 내에서 바로 실행되는 유용한 인사이트를 통해, 문제를 �
   Snyk Open Source와 Snyk Code는 다양한 언어, 패키지 매니저, 프레임워크를 지원하며 지속적으로 최신 기술을 반영합니다.  
   자세한 목록은 [지원 기술 문서](https://docs.snyk.io/supported-languages-package-managers-and-frameworks)를 참조하세요.
 
-## 확장 설치 및 설정 방법
+## Extension 설치 및 설정 방법
 
 지원되는 Visual Studio Code 버전 정보는  
 [Snyk IDE 확장 문서](https://docs.snyk.io/scm-ide-and-ci-cd-integrations/snyk-ide-plugins-and-extensions)를 참고하세요.  
@@ -70,7 +70,7 @@ code --install-extension ./snyk-vscode-extension-ko-0.1.0.vsix
 > 참고: 파일명이 버전에 따라 다를 수 있으니, 다운로드한 실제 파일명을 기준으로 명령어를 입력해 주세요.
 - 설치가 완료되면 [Snyk CLI](https://docs.snyk.io/snyk-cli) 및 [Snyk Language Server](https://docs.snyk.io/scm-ide-and-ci-cd-integrations/snyk-ide-plugins-and-extensions/snyk-language-server)가 자동으로 설치됩니다.
 
-## 확장 사용 가이드
+## Extension 사용 가이드
 
 다음 문서에서 자세한 설정과 기능을 확인할 수 있습니다:
 
