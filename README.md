@@ -1,4 +1,4 @@
-# Visual Studio Code Extension (Snyk)
+# Visual Studio Code Extension (Snyk) - ko(한국어버전)
 
 ## 개발 초기에 보안을 점검하고, 작성하면서 바로 수정하세요
 
