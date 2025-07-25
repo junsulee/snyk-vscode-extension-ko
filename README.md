@@ -1,4 +1,4 @@
-# Visual Studio Code 확장 플러그인 (Snyk)
+# Visual Studio Code Extension (Snyk)
 
 ## 개발 초기에 보안을 점검하고, 작성하면서 바로 수정하세요
 
