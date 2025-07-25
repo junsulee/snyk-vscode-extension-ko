@@ -20,6 +20,7 @@ import {
   DELTA_FINDINGS,
   FEATURES_PREVIEW_SETTING,
   FOLDER_CONFIGS,
+  FORCE_KOREAN_LANGUAGE_SETTING,
   IAC_ENABLED_SETTING,
   ISSUE_VIEW_OPTIONS_SETTING,
   OSS_ENABLED_SETTING,
@@ -494,6 +495,13 @@ export class Configuration implements IConfiguration {
       this.getConfigName(YES_BACKGROUND_OSS_NOTIFICATION_SETTING),
       false,
       true,
+    );
+  }
+
+  get forceKoreanLanguage(): boolean {
+    return !!this.workspace.getConfiguration<boolean>(
+      CONFIGURATION_IDENTIFIER,
+      this.getConfigName(FORCE_KOREAN_LANGUAGE_SETTING),
     );
   }
 

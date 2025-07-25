@@ -269,6 +269,12 @@
         "title": "초기 설정",
         "order": 5,
         "properties": {
+          "snyk.forceKoreanLanguage": {
+            "type": "boolean",
+            "default": false,
+            "markdownDescription": "IDE 기본 언어 설정과 관계없이 Snyk Extension을 한국어로 사용합니다.",
+            "scope": "application"
+          },
           "snyk.yesWelcomeNotification": {
             "type": "boolean",
             "default": true,
