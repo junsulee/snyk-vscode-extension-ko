@@ -497,7 +497,7 @@
   "scripts": {
     "vscode:prepublish": "tsc -p ./ && sass media --no-source-map && npm run copy-i18n",
     "build": "npm run vscode:prepublish",
-    "copy-i18n": "copyfiles -u 1 src/i18n/*.json out/i18n/",
+    "copy-i18n": "copyfiles -u 2 src/i18n/*.json out/i18n/",
     "clean": "rm -rf ./out",
     "rebuild": "npm run clean && npm run build",
     "watch": "tsc -watch -p ./",
