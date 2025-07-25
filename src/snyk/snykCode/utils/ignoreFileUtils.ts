@@ -18,7 +18,7 @@ export const createDCIgnore = async (
   const filePath = `${path}/${dcIgnoreConstant.DCIGNORE_FILENAME}`;
   const openPath = uriAdapter.file(filePath);
   // We don't want to override the dcignore file with an empty one.
-  if (!custom || !fs.existsSync(filePath)) await workspace.fs.writeFile(openPath, content);
+  if (!custom || !fs.existsSync(filePath)) await workspace.fs.writeFile(openPath, new Uint8Array(content));
   const doc = await workspace.openTextDocumentViaUri(openPath);
   void window.showTextDocument(doc);
 };
