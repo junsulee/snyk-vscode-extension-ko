@@ -1,9 +1,8 @@
 {
   "name": "snyk-vulnerability-scanner",
-  "//": "Changing display name requires change in general.ts",
-  "displayName": "Snyk Security",
+  "displayName": "Snyk Security(Korean)",
   "version": "2.23.0-ko",
-  "description": "Easily find and fix issues in your code, open source dependencies, infrastructure as code configurations with fast and accurate scans.",
+  "description": "빠르고 정확한 스캔을 통해 코드, 오픈소스 의존성, IaC 설정의 문제를 손쉽게 찾아내고 해결할 수 있습니다.",
   "icon": "media/images/readme/snyk_extension_icon.png",
   "publisher": "OSBC",
   "homepage": "https://www.osbc.co.kr",
@@ -51,38 +50,32 @@
   "main": "./out/extension.js",
   "types": "./out/extension.d.ts",
   "contributes": {
-    "mcpServerDefinitionProviders": [
-      {
-        "id": "snyk-security-scanner",
-        "label": "Snyk Security Scanner"
-      }
-    ],
     "configuration": [
       {
         "id": "snyk",
-        "title": "Snyk Security",
+        "title": "Snyk Security(Korean)",
         "properties": {}
       },
       {
         "id": "account",
-        "title": "Snyk Account",
+        "title": "Snyk 계정",
         "order": 1,
         "properties": {
           "snyk.advanced.authenticationMethod": {
             "type": "string",
             "default": "OAuth2 (Recommended)",
-            "description": "Specifies whether to authenticate with OAuth2, PAT, or with an API token (Legacy). \n\nNote: OAuth2 authentication is recommended as it provides enhanced security.",
+            "description": "OAuth2, PAT, 또는 API 토큰(레거시) 중 어떤 인증 방식을 사용할지 지정합니다.\n\n권장: OAuth2 방식은 더 향상된 보안을 제공합니다.",
             "enum": [
               "OAuth2 (Recommended)",
               "Personal Access Token",
               "API Token (Legacy)"
             ],
             "enumDescriptions": [
-              "Uses the OAuth2 authentication.",
-              "Uses Personal Access Token (PAT) authentication.",
-              "Uses the legacy Snyk Token authentication."
+              "OAuth2 인증 방식을 사용합니다.",
+              "Personal Access Token(PAT) 인증 방식을 사용합니다.",
+              "기존 Snyk Token 인증 방식을 사용합니다."
             ],
-            "markdownDescription": "Specifies whether to authenticate with OAuth2, PAT, or with an API token (Legacy). \n\nNote: OAuth2 authentication is recommended as it provides enhanced security."
+            "markdownDescription": "OAuth2, PAT, 또는 API 토큰(레거시) 중 어떤 인증 방식을 사용할지 지정합니다.\n\n권장: OAuth2 방식은 더 향상된 보안을 제공합니다."
           },
           "snyk.advanced.tokenStorage": {
             "type": "string",
@@ -90,52 +83,51 @@
               "Always use VS Code's secret storage"
             ],
             "default": "Always use VS Code's secret storage",
-            "markdownDescription": "Snyk uses VS Code's [secret storage](https://code.visualstudio.com/api/references/vscode-api#SecretStorage) to safely persist API token instead of saving it in plaintext in `settings.json`. To set the token manually, run the VS Code command [Snyk: Set Token](command:snyk.setToken)."
+            "markdownDescription": "Snyk는 VS Code의 [비밀 저장소](https://code.visualstudio.com/api/references/vscode-api#SecretStorage)를 활용해 API 토큰을 안전하게 보관합니다. (settings.json 파일에 평문 저장하지 않습니다)\n\n토큰을 직접 설정하려면 [Snyk: Set Token](command:snyk.setToken) 명령을 사용하세요."
           },
           "snyk.advanced.customEndpoint": {
             "type": "string",
-            "markdownDescription": "If you're using SSO with Snyk and OAuth2, the custom endpoint configuration is automatically populated. \n\nOtherwise, for public regional instances, see our [documentation](https://docs.snyk.io/working-with-snyk/regional-hosting-and-data-residency#available-snyk-regions). \n\nFor private instances, contact your team or account manager.",
+            "markdownDescription": "Snyk 및 OAuth2로 SSO를 사용하는 경우, 커스텀 엔드포인트는 자동으로 채워집니다.\n\n퍼블릭 지역 인스턴스의 경우 [문서](https://docs.snyk.io/working-with-snyk/regional-hosting-and-data-residency#available-snyk-regions)를 참고하세요.\n\n프라이빗 인스턴스는 팀 또는 계정 관리자에게 문의하세요.",
             "scope": "window",
             "pattern": "^(|(https?://)api.*.(snyk|snykgov).io)$"
           },
           "snyk.advanced.organization": {
             "type": "string",
-            "markdownDescription": "Specifies an organization ID to run tests for that organization.\n\nRetrieve the organization ID from the organization settings in the Snyk UI: `https://app.snyk.io/org/[ORG_NAME]/manage/settings` and copy the ID from the **Organization ID** section.\n\nNote: If not specified, the preferred organization as defined in your [web account settings](https://app.snyk.io/account) is used to run tests.",
+            "markdownDescription": "테스트를 실행할 조직 ID를 지정합니다.\n\nSnyk UI의 조직 설정(`https://app.snyk.io/org/[ORG_NAME]/manage/settings`)에서 **Organization ID**를 복사하여 입력하세요.\n\n입력하지 않으면 웹 계정 설정([web account settings](https://app.snyk.io/account))에 정의된 기본 조직이 사용됩니다.",
             "scope": "window"
           },
           "snyk.yesCrashReport": {
-            "//": "Name starts with y to put it at the end, as configs are sorted alphbetically",
             "type": "boolean",
             "default": true,
-            "markdownDescription": "Send error reports to Snyk",
+            "markdownDescription": "Snyk에 오류 보고서를 전송합니다.",
             "scope": "application"
           }
         }
       },
       {
         "id": "scan",
-        "title": "Scan Configuration",
+        "title": "스캔 설정",
         "order": 2,
         "properties": {
           "snyk.features.openSourceSecurity": {
             "order": 1,
             "type": "boolean",
-            "title": "Snyk Open Source security issues",
-            "description": "Find and fix open source dependency issues.",
+            "title": "Snyk 오픈소스 보안 이슈",
+            "description": "오픈소스 의존성 문제를 찾아내고 해결합니다.",
             "default": true
           },
           "snyk.features.codeSecurity": {
             "order": 2,
             "type": "boolean",
-            "title": "Snyk Code security issues",
-            "description": "Find and fix security issues in your application code in real time.",
+            "title": "Snyk 코드 보안 이슈",
+            "description": "애플리케이션 코드의 보안 문제를 실시간으로 찾아내고 해결합니다.",
             "default": true
           },
           "snyk.features.infrastructureAsCode": {
             "order": 4,
             "type": "boolean",
-            "title": "Snyk Infrastructure as Code issues",
-            "description": "Find and fix your IaC misconfigurations.",
+            "title": "Snyk 인프라 코드(IaC) 이슈",
+            "description": "IaC 구성 오류를 찾아내고 해결합니다.",
             "default": true
           },
           "snyk.severity": {
@@ -166,26 +158,26 @@
               }
             },
             "additionalProperties": false,
-            "description": "Severity issues to display.",
+            "description": "표시할 취약점 심각도.",
             "scope": "window"
           },
           "snyk.allIssuesVsNetNewIssues": {
             "type": "string",
             "default": "All issues",
-            "description": "Specifies whether to see all issues or only net new issues. Net new issues option requires a Git repository, where it compares findings with those in the base branch.",
+            "description": "모든 이슈를 볼지, 새로 발견된 이슈만 볼지 지정합니다. Net new 이슈 옵션은 Git 저장소가 필요하며, 기준 브랜치와 비교해 새로운 이슈만 표시합니다.",
             "enum": [
               "All issues",
               "Net new issues"
             ],
             "enumDescriptions": [
-              "Shows all issues that have been identified, including both new and existing issues.",
-              "Shows only new issues filtering out previously known issues in a base branch"
+              "모든(신규 및 기존) 이슈를 보여줍니다.",
+              "기존 브랜치에 이미 알려진 이슈를 제외하고 새로 발견된 이슈만 보여줍니다."
             ],
             "order": 6
           },
           "snyk.advanced.additionalParameters": {
             "type": "string",
-            "description": "Parameters to pass to Snyk CLI for Open Source security tests.",
+            "description": "Snyk CLI에 전달할 추가 파라미터(Open Source 보안 테스트용).",
             "scope": "window",
             "order": 7
           }
@@ -193,7 +185,7 @@
       },
       {
         "id": "userExperience",
-        "title": "User Experience",
+        "title": "사용자 환경",
         "order": 3,
         "properties": {
           "snyk.scanningMode": {
@@ -204,33 +196,32 @@
               "manual"
             ],
             "enumDescriptions": [
-              "Scan automatically in the background.",
-              "Do not scan automatically, only scan when you run the `Snyk: Rescan` command."
+              "백그라운드에서 자동으로 스캔합니다.",
+              "`Snyk: Rescan` 명령 실행 시에만 스캔합니다."
             ],
             "default": "auto",
-            "title": "Snyk Code scanning mode",
-            "description": "Choose whether to run Snyk Code scans in the background, or only when you run the `Snyk: Rescan` command."
+            "title": "Snyk 코드 스캔 모드",
+            "description": "`Snyk: Rescan` 명령을 직접 실행할 때만 스캔할지, 백그라운드에서 자동 스캔할지 선택하세요."
           },
           "snyk.advanced.autoScanOpenSourceSecurity": {
             "order": 2,
             "type": "boolean",
             "default": false,
-            "description": "Run Snyk Open Source Security analysis in automatic mode.",
+            "description": "Snyk 오픈소스 보안 분석을 자동 모드로 실행합니다.",
             "scope": "application"
           },
           "snyk.yesBackgroundOssNotification": {
             "order": 3,
-            "//": "Name starts with y to put it at the end, as configs are sorted alphabetically",
             "type": "boolean",
             "default": true,
-            "markdownDescription": "Show scan notification for critical Open Source Security issues when Snyk view is hidden",
+            "markdownDescription": "Snyk 뷰가 숨겨져 있을 때, 주요 오픈소스 보안 이슈 발생 시 알림을 표시합니다.",
             "scope": "application"
           }
         }
       },
       {
         "id": "experimental",
-        "title": "Experimental",
+        "title": "실험적 기능",
         "order": 4,
         "properties": {
           "snyk.issueViewOptions": {
@@ -243,31 +234,31 @@
             "properties": {
               "openIssues": {
                 "type": "boolean",
-                "description": "Open Issues",
+                "description": "오픈 이슈",
                 "default": true
               },
               "ignoredIssues": {
                 "type": "boolean",
-                "description": "Ignored Issues",
+                "description": "무시된 이슈",
                 "default": false
               }
             },
             "additionalProperties": false,
-            "markdownDescription": "Ignored issues are currently an experimental feature. Please reach out to [support.snyk.io](https://support.snyk.io) for more details.\n\nShow the following issues:",
+            "markdownDescription": "무시된 이슈는 실험적 기능입니다. 자세한 내용은 [support.snyk.io](https://support.snyk.io)에서 문의하세요.\n\n표시할 이슈 유형:",
             "scope": "window"
           },
           "snyk.folderConfigs": {
             "order": 2,
             "type": "array",
             "default": [],
-            "description": "Folder configuration for Snyk scans."
+            "description": "Snyk 스캔을 위한 폴더 설정."
           },
           "snyk.features.preview": {
             "order": 3,
             "type": "object",
             "default": {},
-            "title": "Preview feature toggles",
-            "description": "Preview features that are currently in development. Setting keys will be removed when features become stable.",
+            "title": "미리보기 기능",
+            "description": "개발 중인 미리보기(Preview) 기능입니다. 안정화 후에는 해당 키가 제거될 수 있습니다.",
             "propertyNames": true,
             "properties": {}
           }
@@ -275,26 +266,25 @@
       },
       {
         "id": "initialization",
-        "title": "Initialization",
+        "title": "초기 설정",
         "order": 5,
         "properties": {
           "snyk.yesWelcomeNotification": {
-            "//": "Name starts with y to put it at the end, as configs are sorted alphabetically",
             "type": "boolean",
             "default": true,
-            "markdownDescription": "Show welcome notification after installation and restart",
+            "markdownDescription": "설치 또는 재시작 후 환영 알림을 표시합니다.",
             "scope": "application"
           },
           "snyk.trustedFolders": {
             "type": "array",
             "default": [],
-            "description": "Folders to trust for Snyk scans."
+            "description": "Snyk 스캔을 신뢰할 폴더 목록."
           }
         }
       },
       {
         "id": "cli",
-        "title": "CLI & Language Server",
+        "title": "CLI 및 언어 서버",
         "order": 6,
         "properties": {
           "snyk.advanced.automaticDependencyManagement": {
@@ -302,14 +292,14 @@
             "type": "boolean",
             "default": true,
             "scope": "machine",
-            "markdownDescription": "Snyk will download, install and update dependencies for you. If this option is disabled, make sure valid paths to the dependencies are provided."
+            "markdownDescription": "Snyk가 의존성 라이브러리를 자동으로 다운로드, 설치, 업데이트합니다. 이 옵션을 비활성화하면 직접 의존성 경로를 지정해야 합니다."
           },
           "snyk.advanced.cliBaseDownloadUrl": {
             "order": 2,
             "type": "string",
             "scope": "machine",
             "default": "https://downloads.snyk.io",
-            "markdownDescription": "Base URL to download the CLI."
+            "markdownDescription": "CLI 다운로드 기본 URL."
           },
           "snyk.advanced.cliReleaseChannel": {
             "order": 3,
@@ -320,13 +310,13 @@
               "rc",
               "preview"
             ],
-            "markdownDescription": "CLI release channel."
+            "markdownDescription": "CLI 릴리즈 채널."
           },
           "snyk.advanced.cliPath": {
             "order": 4,
             "type": "string",
             "scope": "machine",
-            "markdownDescription": "Sets path to Snyk CLI extension dependency."
+            "markdownDescription": "Snyk CLI 확장 의존성 경로를 지정합니다."
           }
         }
       }
@@ -350,69 +340,69 @@
         {
           "type": "webview",
           "id": "snyk.views.summary",
-          "name": "SUMMARY",
+          "name": "요약",
           "when": "snyk:initialized && snyk:loggedIn && snyk:workspaceFound && !snyk:error",
           "content": "${scanSummaryHtml}"
         },
         {
           "id": "snyk.views.analysis.oss",
-          "name": "Open Source Security",
+          "name": "오픈소스 보안",
           "when": "snyk:initialized && snyk:loggedIn && snyk:workspaceFound && !snyk:error"
         },
         {
           "id": "snyk.views.analysis.code.security",
-          "name": "Code Security",
+          "name": "코드 보안",
           "when": "snyk:initialized && snyk:loggedIn && snyk:codeEnabled && snyk:workspaceFound && !snyk:error"
         },
         {
           "id": "snyk.views.analysis.configuration",
-          "name": "Configuration Issues",
+          "name": "설정 이슈",
           "when": "snyk:initialized && snyk:loggedIn && snyk:workspaceFound && !snyk:error"
         },
         {
           "id": "snyk.views.analysis.code.enablement",
-          "name": "Code Security & Quality",
+          "name": "코드 보안 및 품질",
           "when": "snyk:initialized && snyk:loggedIn && !snyk:codeEnabled && snyk:workspaceFound && !snyk:error"
         },
         {
           "id": "snyk.views.support",
-          "name": "Help & feedback"
+          "name": "도움말 및 피드백"
         }
       ]
     },
     "viewsWelcome": [
       {
         "view": "snyk.views.welcome",
-        "contents": "Snyk has encountered a problem. Please restart the extension: \n[Restart](command:snyk.start 'Restart Snyk')\nIf the error persists, please check your [settings](command:snyk.settings) and [contact us](https://snyk.io/contact-us/?utm_source=vsc).\n\n You can check the logs to see the exact error in [Snyk Security](command:snyk.showOutputChannel) and [Snyk Language Server](command:snyk.showLsOutputChannel) output channels.\n[Display Error](command:snyk.showErrorFromContext)\n",
+        "contents": "Snyk에서 문제가 발생했습니다. 확장을 재시작하세요: \n[재시작](command:snyk.start 'Restart Snyk')\n문제가 계속된다면 [설정](command:snyk.settings) 및 [문의하기](https://snyk.io/contact-us/?utm_source=vsc)도 확인해 주세요.\n\n[Snyk 보안](command:snyk.showOutputChannel)과 [Snyk 언어 서버](command:snyk.showLsOutputChannel) 출력 채널에서 로그를 확인할 수 있습니다.\n[오류 표시](command:snyk.showErrorFromContext)\n",
         "when": "snyk:error"
       },
       {
         "view": "snyk.views.welcome",
-        "contents": "👋 Welcome to Snyk for Visual Studio Code.\n⏱️ Please wait, the extension is loading...",
+        "contents": "👋 Snyk for Visual Studio Code에 오신 것을 환영합니다.\n⏱️ 잠시만 기다려 주세요, 확장이 로드 중입니다...",
         "when": "!snyk:error && !snyk:initialized"
       },
       {
         "view": "snyk.views.welcome",
-        "contents": "👋 Let's secure your code! \nTo scan your project for issues, Snyk needs to:\n 1. Connect to your Snyk account: This allows us to securely analyse your code.\n2. Trust this workspace: This lets Snyk safely gather information about your project (like dependencies).\nYou should only scan projects you trust. [More info](https://docs.snyk.io/ide-tools/visual-studio-code-extension/workspace-trust)\nBy connecting your account with Snyk, you agree to the Snyk [Privacy Policy](https://snyk.io/policies/privacy), and the Snyk [Terms of Service](https://snyk.io/policies/terms-of-service).\n\n[Connect & Trust Workspace](command:snyk.initiateLogin 'Connect with Snyk')",
+        "contents": "👋 코드를 안전하게 보호하세요!\n프로젝트의 이슈를 스캔하려면 Snyk에 로그인하고 워크스페이스를 신뢰해야 합니다.\n1. Snyk 계정 연결: 코드를 안전하게 분석하기 위해 필요합니다.\n2. 워크스페이스 신뢰: 프로젝트(의존성 등)에 대한 정보를 안전하게 수집합니다.\n신뢰할 수 있는 프로젝트만 스캔하세요. [자세히 보기](https://docs.snyk.io/ide-tools/visual-studio-code-extension/workspace-trust)\nSnyk 계정을 연결하면 [개인정보처리방침](https://snyk.io/policies/privacy)과 [이용약관](https://snyk.io/policies/terms-of-service)에 동의하게 됩니다.\n\n[계정 연결 및 워크스페이스 신뢰](command:snyk.initiateLogin 'Connect with Snyk')",
         "when": "!snyk:error && snyk:initialized && !snyk:loggedIn && !snyk:authMethodChanged"
       },
       {
         "view": "snyk.views.welcome",
-        "contents": "⚠️ Your authentication method has changed.\n\n👉 Please re-authenticate to continue using Snyk\n\nBy connecting your account with Snyk, you agree to the Snyk [Privacy Policy](https://snyk.io/policies/privacy), and the Snyk [Terms of Service](https://snyk.io/policies/terms-of-service).\n\n[Connect & Trust Workspace](command:snyk.initiateLogin 'Re-authenticate')",
+        "contents": "⚠️ 인증 방식이 변경되었습니다.\n\n👉 계속 사용하려면 재인증해 주세요.\n\nSnyk 계정을 연결하면 [개인정보처리방침](https://snyk.io/policies/privacy)과 [이용약관](https://snyk.io/policies/terms-of-service)에 동의하게 됩니다.\n\n[계정 연결 및 워크스페이스 신뢰](command:snyk.initiateLogin 'Re-authenticate')",
         "when": "!snyk:error && snyk:initialized && !snyk:loggedIn && snyk:authMethodChanged"
       },
       {
         "view": "snyk.views.welcome",
-        "contents": "We are now redirecting you to our auth page, go ahead and log in. If a browser window doesn't open after a few seconds, please copy the url below and manually paste it in a browser.\n[Copy URL to clipboard](command:snyk.copyAuthLink 'Copy URL to clipboard')",
+        "contents": "인증 페이지로 이동 중입니다. 몇 초 후 브라우저 창이 자동으로 열리지 않으면 아래 URL을 복사해 직접 브라우저에 붙여넣어 주세요.\n[URL 복사](command:snyk.copyAuthLink 'Copy URL to clipboard')",
         "when": "!snyk:error && snyk:initialized && !snyk:loggedIn && snyk:authenticating"
       },
       {
         "view": "snyk.views.analysis.code.enablement",
-        "contents": "Thanks for connecting with Snyk. ✅\n 👉 You are almost set 🤗.\n[Enable Snyk Code and start analysing](command:snyk.enableCode 'Upload code to Snyk')\nIt looks like your organization's configuration is disabled, that's why you are seeing this message. You can easily enable it by pressing the above button and switching it on.\nWe apologize for the inconvenience and please [contact us](https://snyk.io/contact-us/?utm_source=vsc) if you have any other questions or concerns!"
+        "contents": "계정 연결이 완료되었습니다. ✅\n 👉 이제 거의 준비가 완료되었습니다. 🤗\n[Snyk 코드 활성화 및 분석 시작](command:snyk.enableCode 'Upload code to Snyk')\n조직 설정이 비활성화된 상태이므로 이 메시지가 표시됩니다. 위 버튼을 눌러 설정을 활성화할 수 있습니다.\n불편을 드려 죄송합니다. 문의 사항이 있으시면 [문의하기](https://snyk.io/contact-us/?utm_source=vsc)로 연락해 주세요!"
       },
       {
         "view": "snyk.views.welcome",
-        "contents": "Open a workspace or a folder in Visual Studio Code to start the analysis.",
+        "contents": "분석을 시작하려면 Visual Studio Code에서 워크스페이스나 폴더를 열어 주세요.",
         "when": "!snyk:error && snyk:initialized && snyk:loggedIn && !snyk:workspaceFound"
       }
     ],
@@ -447,60 +437,61 @@
     "commands": [
       {
         "command": "snyk.start",
-        "title": "Rescan",
+        "title": "다시 스캔",
         "category": "Snyk",
         "icon": "$(run)"
       },
       {
         "command": "snyk.settings",
-        "title": "Settings",
+        "title": "설정",
         "category": "Snyk",
         "icon": "$(gear)"
       },
       {
         "command": "snyk.login",
-        "title": "Log In",
+        "title": "로그인",
         "category": "Snyk",
         "icon": "$(sign-in)"
       },
       {
         "command": "snyk.setToken",
-        "title": "Set Token",
+        "title": "토큰 설정",
         "category": "Snyk",
         "icon": "$(sign-in)"
       },
       {
         "command": "snyk.logout",
-        "title": "Log Out",
+        "title": "로그아웃",
         "category": "Snyk",
         "icon": "$(sign-out)"
       },
       {
         "command": "snyk.dcignore",
-        "title": "Create dcignore File",
+        "title": "dcignore 파일 생성",
         "category": "Snyk",
         "icon": "$(new-file)"
       },
       {
         "command": "snyk.showOutputChannel",
-        "title": "Show Output Channel",
+        "title": "출력 채널 표시",
         "category": "Snyk"
       },
       {
         "command": "snyk.showLsOutputChannel",
-        "title": "Show Language Server Output Channel",
+        "title": "언어 서버 출력 채널 표시",
         "category": "Snyk"
       },
       {
         "command": "snyk.clearPersistedCache",
-        "title": "Clear Persisted Cache",
+        "title": "영구 캐시 삭제",
         "category": "Snyk"
       }
     ]
   },
   "scripts": {
-    "vscode:prepublish": "tsc -p ./ && sass media --no-source-map",
+    "vscode:prepublish": "tsc -p ./ && sass media --no-source-map && npm run copy-i18n",
     "build": "npm run vscode:prepublish",
+    "copy-i18n": "copyfiles -u 1 src/i18n/*.json out/i18n/",
     "clean": "rm -rf ./out",
     "rebuild": "npm run clean && npm run build",
     "watch": "tsc -watch -p ./",
@@ -536,6 +527,7 @@
     "@typescript-eslint/parser": "^7.4.0",
     "@vscode/test-electron": "^2.4.0",
     "concurrently": "^7.0.0",
+    "copyfiles": "^2.4.1",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^3.6.1",
@@ -545,9 +537,12 @@
     "prettier": "^2.6.1",
     "sass": "^1.48.0",
     "sinon": "^11.1.1",
+    "ts-loader": "^9.5.2",
     "ts-node": "^10.7.0",
-    "typescript": "^5.4.3",
+    "typescript": "^5.8.3",
     "vscode-test": "^1.4.0",
+    "webpack": "^5.100.2",
+    "webpack-cli": "^6.0.1",
     "yalc": "^1.0.0-pre.44"
   },
   "dependencies": {
