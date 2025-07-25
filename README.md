@@ -84,4 +84,4 @@ code --install-extension ./snyk-vscode-extension-ko-0.1.0.vsix
 ## 문제 해결 및 기술 지원
 
 - 자주 발생하는 문제는 [문제 해결 가이드](https://docs.snyk.io/scm-ide-and-ci-cd-integrations/snyk-ide-plugins-and-extensions/visual-studio-code-extension/troubleshooting-for-visual-studio-code-extension)를 참고하세요.  
-- 추가 도움이 필요한 경우 [오에스비씨 기술지원팀](support@osbc.co.kr) 혹은 본 Repository에 Issues 메뉴를 통해 문의하실 수 있습니다.
+- 추가 도움이 필요한 경우 [오에스비씨 기술지원팀](mailto:support@osbc.co.kr) 혹은 본 Repository에 Issues 메뉴를 통해 문의하실 수 있습니다.
