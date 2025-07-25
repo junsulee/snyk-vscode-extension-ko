@@ -6,6 +6,7 @@ import { ILog } from '../logger/interfaces';
 import { errorsLogs } from '../messages/errors';
 import { IVSCodeCommands } from '../vscode/commands';
 import { IVSCodeWindow } from '../vscode/window';
+import { t } from '../../../i18n/i18n';
 
 export interface INotificationService {
   init(): Promise<void>;
@@ -35,11 +36,11 @@ export class NotificationService implements INotificationService {
     }
 
     const pressedButton = await this.window.showInformationMessage(
-      snykMessages.welcome.msg,
-      snykMessages.welcome.button,
+      t('oss.welcome.message'),
+      t('oss.welcome.button'),
     );
 
-    if (pressedButton === snykMessages.welcome.button) {
+    if (pressedButton === t('oss.welcome.button')) {
       await this.commands.executeCommand(VSCODE_VIEW_CONTAINER_COMMAND);
     }
 
@@ -49,7 +50,7 @@ export class NotificationService implements INotificationService {
   async showErrorNotification(message: string): Promise<void> {
     await this.showErrorNotificationWithLinkAction(
       message,
-      'Show Documentation',
+      t('oss.notification.show.documentation'),
       'https://docs.snyk.io/scm-ide-and-ci-cd-integrations/snyk-ide-plugins-and-extensions/visual-studio-code-extension/troubleshooting-for-visual-studio-code-extension',
     );
   }
@@ -62,6 +63,6 @@ export class NotificationService implements INotificationService {
           await this.commands.executeCommand(SNYK_OPEN_BROWSER_COMMAND, actionLink);
         }
       })
-      .catch(err => ErrorHandler.handle(err, this.logger, 'error occurred during error handling'));
+      .catch(err => ErrorHandler.handle(err, this.logger, t('oss.notification.error.handling')));
   }
 }

@@ -1,5 +1,6 @@
 import { IVSCodeWindow } from '../vscode/window';
 import { FolderConfig, IConfiguration } from './configuration';
+import { t } from '../../../i18n/i18n';
 
 export interface IFolderConfigs {
   getFolderConfigs(config: IConfiguration): ReadonlyArray<FolderConfig>;
@@ -44,7 +45,7 @@ export class FolderConfigs implements IFolderConfigs {
       canSelectFiles: false,
       canSelectFolders: true,
       canSelectMany: false,
-      openLabel: 'Select a reference folder for net-new issue scanning',
+      openLabel: t('configuration.select.reference.folder'),
     });
 
     if (!selectedDir || selectedDir.length != 1) {
@@ -68,7 +69,7 @@ export class FolderConfigs implements IFolderConfigs {
       validateInput: input => {
         const valid = this.validateBranchName(input, folderConfig.localBranches ?? []);
         if (!valid) {
-          return "The chosen branch name doesn't exist.";
+          return t('configuration.branch.not.exist');
         }
       },
     });

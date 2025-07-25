@@ -1,27 +1,28 @@
+import { t } from '../../../i18n/i18n';
+
 export const messages = {
   analysis: {
-    scanFailed: 'Scan failed',
-    noWorkspaceTrust: 'No workspace folder was granted trust',
-    clickToProblem: 'Click here to see the problem.',
-    scanRunning: 'Scanning...',
-    allSeverityFiltersDisabled: 'Please enable severity filters to see the results.',
-    duration: (time: string, day: string): string => `Analysis finished at ${time}, ${day}`,
-    noWorkspaceTrustDescription:
-      'None of workspace folders were trusted. If you trust the workspace, you can add it to the list of trusted folders in the extension settings, or when prompted by the extension next time.',
+    scanFailed: t('oss.analysis.scan.failed'),
+    noWorkspaceTrust: t('oss.analysis.no.workspace.trust'),
+    clickToProblem: t('oss.analysis.click.to.problem'),
+    scanRunning: t('oss.scan.running'),
+    allSeverityFiltersDisabled: t('oss.analysis.all.severity.filters.disabled'),
+    duration: (time: string, day: string): string => t('oss.analysis.duration', { time, day }),
+    noWorkspaceTrustDescription: t('oss.analysis.no.workspace.trust.description'),
   },
   errors: {
-    suggestionViewShowFailed: 'Failed to show Snyk OSS suggestion view',
+    suggestionViewShowFailed: t('oss.error.suggestion.view.show.failed'),
   },
   test: {
-    testFailed: 'Open Source Security test failed.',
-    testStarted: 'Open Source Security test started.',
-    viewResults: 'View results',
-    hide: "Don't show again",
-    testFailedForPath: (path: string): string => `Open Source Security test failed for "${path}".`,
-    testFinished: (projectName: string): string => `Open Source Security test finished for "${projectName}".`,
+    testFailed: t('oss.scan.failed'),
+    testStarted: t('oss.scan.started'),
+    viewResults: t('oss.test.view.results'),
+    hide: t('oss.test.hide'),
+    testFailedForPath: (path: string): string => t('oss.scan.failed.path', { path }),
+    testFinished: (projectName: string): string => t('oss.scan.finished', { projectName }),
   },
   treeView: {
-    cookingDependencies: 'Scanning...',
-    runTest: 'Run scan for Open Source security issues.',
+    cookingDependencies: t('oss.cooking.dependencies'),
+    runTest: t('oss.test.run'),
   },
 };

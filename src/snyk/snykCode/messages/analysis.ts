@@ -1,9 +1,11 @@
-export const messages = {
-  runTest: 'Run scan for Code vulnerabilites and issues.',
-  started: 'Code analysis started.',
-  finished: 'Code analysis finished.',
-  temporaryFailed: 'Snyk Code is temporarily unavailable.',
-  retry: 'We are automatically retrying to connect...',
+import { t } from '../../../i18n/i18n';
 
-  failed: (requestId: string): string => `Code analysis failed. Request ID: ${requestId}`,
+export const messages = {
+  runTest: t('code.scan.run'),
+  started: t('code.scan.started'),
+  finished: t('code.scan.finished'),
+  temporaryFailed: t('code.scan.temporarily.failed'),
+  retry: t('code.scan.retry'),
+
+  failed: (requestId: string): string => t('code.scan.failed', { requestId }),
 };

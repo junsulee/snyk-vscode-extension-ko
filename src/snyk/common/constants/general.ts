@@ -1,7 +1,9 @@
+import { t } from '../../../i18n/i18n';
+
 // Changing this requires changing display name in package.json.
-export const SNYK_NAME = 'Snyk Security';
+export const SNYK_NAME = t('general.snyk.name');
 export const SNYK_TOKEN_KEY = 'snyk.token';
-const SNYK_UNIQUE_EXTENSION_NAME = 'Snyk Vulnerability Scanner';
+const SNYK_UNIQUE_EXTENSION_NAME = t('general.extension.name');
 export const SNYK_PUBLISHER = 'snyk-security';
 export const SNYK_NAME_EXTENSION = SNYK_UNIQUE_EXTENSION_NAME.toLowerCase().replace(/[()]/g, '').replace(/\s/g, '-');
 export const IDE_NAME_SHORT = 'vscode';

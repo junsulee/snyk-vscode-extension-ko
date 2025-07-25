@@ -1,0 +1,106 @@
+{
+  "oss.welcome.message": "Snyk에 오신 것을 환영합니다! 대시보드를 확인하여 코드 분석을 시작하세요",
+  "oss.welcome.button": "확인하기",
+  
+  "oss.scan.started": "오픈소스 보안 테스트가 시작되었습니다.",
+  "oss.scan.finished": "\"{projectName}\"에 대한 오픈소스 보안 테스트가 완료되었습니다.",
+  "oss.scan.failed": "오픈소스 보안 테스트가 실패했습니다.",
+  "oss.scan.failed.path": "\"{path}\"에 대한 오픈소스 보안 테스트가 실패했습니다.",
+  "oss.scan.running": "스캔 중...",
+  "oss.scan.fetching": "이슈를 가져오는 중...",
+  "oss.scan.complete": "스캔이 완료되었습니다",
+  
+  "oss.analysis.scan.failed": "스캔이 실패했습니다",
+  "oss.analysis.no.workspace.trust": "신뢰할 수 있는 워크스페이스 폴더가 없습니다",
+  "oss.analysis.click.to.problem": "문제를 보려면 여기를 클릭하세요.",
+  "oss.analysis.duration": "{day} {time}에 분석이 완료되었습니다",
+  "oss.analysis.no.workspace.trust.description": "워크스페이스 폴더가 신뢰되지 않았습니다. 워크스페이스를 신뢰하는 경우 확장 설정에서 신뢰할 수 있는 폴더 목록에 추가하거나 다음에 확장에서 메시지가 표시될 때 추가할 수 있습니다.",
+  "oss.analysis.all.severity.filters.disabled": "결과를 보려면 심각도 필터를 활성화하세요.",
+  
+  "oss.issues.congrats.none.found": "✅ 축하합니다! 이슈가 발견되지 않았습니다!",
+  "oss.issues.congrats.no.open.found": "✅ 축하합니다! 열린 이슈가 발견되지 않았습니다!",
+  "oss.issues.open.disabled": "열린 이슈가 비활성화되었습니다!",
+  "oss.issues.no.ignored": "✋ 무시된 이슈가 없습니다, 열린 이슈가 비활성화됨",
+  "oss.issues.open.and.ignored.disabled": "열린 이슈와 무시된 이슈가 모두 비활성화되었습니다!",
+  "oss.issues.no.fixable": "Snyk Agent Fix로 수정할 수 있는 이슈가 없습니다.",
+  "oss.issues.all.view.options.disabled": "열린 또는 무시된 이슈를 보려면 설정을 조정하세요.",
+  "oss.issues.open.view.option.disabled": "열린 이슈를 보려면 설정을 조정하세요.",
+  "oss.issues.ignored.view.option.disabled": "무시된 이슈를 보려면 설정을 조정하세요.",
+  "oss.issues.open.count": "{count}개의 열린 이슈{s}",
+  "oss.issues.ignored.count": "{count}개의 무시된 이슈{s}",
+  "oss.issues.open.and.ignored": "✋ {openText} & {ignoredText}",
+  "oss.issues.open.only": "✋ {openText}",
+  "oss.issues.ignored.only": "✋ {ignoredText}, 열린 이슈가 비활성화됨",
+  
+  "oss.vuln.count.inline.format": "이슈: {count}개 | 높음: {high}, 보통: {medium}, 낮음: {low}",
+  
+  "oss.error.suggestion.view.show.failed": "Snyk OSS 제안 뷰 표시에 실패했습니다",
+  "oss.error.suggestion.view.message.handling.failed": "Snyk OSS 제안 뷰의 메시지 처리에 실패했습니다 {message}",
+  
+  "oss.test.view.results": "결과 보기",
+  "oss.test.hide": "다시 표시하지 않음",
+  "oss.test.run": "오픈소스 보안 이슈 스캔을 실행합니다.",
+  
+  "oss.notification.show.documentation": "문서 보기",
+  "oss.notification.error.handling": "오류 처리 중 오류가 발생했습니다",
+  
+  "oss.cooking.dependencies": "스캔 중...",
+  
+  "code.scan.started": "코드 분석이 시작되었습니다.",
+  "code.scan.finished": "코드 분석이 완료되었습니다.",
+  "code.scan.failed": "코드 분석이 실패했습니다. 요청 ID: {requestId}",
+  "code.scan.temporarily.failed": "Snyk Code를 일시적으로 사용할 수 없습니다.",
+  "code.scan.retry": "자동으로 연결을 재시도하고 있습니다...",
+  "code.scan.run": "코드 취약점 및 이슈 스캔을 실행합니다.",
+  
+  "code.error.suggestion.view.show.failed": "Snyk Code 제안 뷰 표시에 실패했습니다",
+  "code.error.suggestion.view.message.handling.failed": "Snyk Code 제안 뷰의 메시지 처리에 실패했습니다 {message}",
+  
+  "code.ignore.base.comment": "deepcode ignore",
+  "code.ignore.reason.tip": "<이 이슈를 무시하는 이유를 명시해 주세요>",
+  "code.ignore.action.name": "이 특정 제안을 무시합니다 (Snyk)",
+  "code.ignore.file.action.name": "현재 파일에서 이 제안을 무시합니다 (Snyk)",
+  "code.diagnostics.oss.collection.name": "Snyk 오픈소스 보안",
+  "code.diagnostics.oss.collection.name.ls": "Snyk 오픈소스",
+  "code.webview.panel.security.title": "Snyk Code 이슈",
+  
+  "iac.scan.run": "구성 이슈 스캔을 실행합니다.",
+  "iac.error.suggestion.view.show.failed": "Snyk IaC 제안 뷰 표시에 실패했습니다",
+  
+  "general.snyk.name": "Snyk 보안",
+  "general.extension.name": "Snyk 취약점 스캐너",
+  
+  "errors.login.status": "서버에서 사용자 세션 확인에 실패했습니다",
+  "errors.filters.files": "서버에서 번들용 필터 파일을 가져오는데 실패했습니다",
+  "errors.analyse": "분석 요청이 실패했습니다",
+  "errors.failed.analysis": "분석 실행에 실패했습니다",
+  "errors.failed.execution": "확장 파이프라인 실행에 실패했습니다",
+  "errors.failed.execution.debounce": "디바운스 후 확장 파이프라인 실행에 실패했습니다",
+  "errors.undefined.error": "인식되지 않은 오류",
+  "errors.watch.file.before.extend.bundle": "번들 확장 전 파일 변경 감시에 실패했습니다",
+  "errors.update.review.positions": "파일 편집 중 검토 결과 위치 업데이트에 실패했습니다",
+  "errors.error.report.fail": "오류 보고서 전송에 실패했습니다",
+  "errors.modified.file": "{type} 유형의 파일 변경 처리에 실패했습니다",
+  "errors.command": "{type} 명령 실행에 실패했습니다",
+  "errors.config.watcher": "구성 업데이트 처리에 실패했습니다",
+  "errors.loading.badge": "로딩 배지 아이콘 설정에 실패했습니다",
+  "errors.welcome.notification": "환영 알림 처리에 실패했습니다",
+  "errors.check.advanced.mode": "고급 모드 확인에 실패했습니다",
+  
+  "learn.get.lesson.error": "레슨을 가져오는데 실패했습니다",
+  "learn.lesson.button.title": "이 이슈에 대해 알아보기",
+  
+  "configuration.branch.not.exist": "선택한 브랜치 이름이 존재하지 않습니다.",
+  "configuration.select.reference.folder": "새로운 이슈 스캔을 위한 참조 폴더를 선택하세요",
+  
+  "commands.failed.to.find.issue": "이슈 {id}를 찾는데 실패했습니다.",
+  "commands.error.counting.module.issues": "모듈 이슈 계산 중 오류: {error}",
+  
+  "codeaction.ignore.issue": "이슈 무시",
+  "codeaction.show.suggestion": "이 제안 보기 (Snyk)",
+  
+  "severity.critical": "심각",
+  "severity.high": "높음",
+  "severity.medium": "보통",
+  "severity.low": "낮음"
+}

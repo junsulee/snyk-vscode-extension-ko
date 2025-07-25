@@ -5,6 +5,7 @@ import { IThemeColorAdapter } from '../../common/vscode/theme';
 import { TextEditorDecorationType } from '../../common/vscode/types';
 import { IVSCodeWindow } from '../../common/vscode/window';
 import { ImportedModule, ModuleVulnerabilityCount } from '../services/vulnerabilityCount/importedModule';
+import { t } from '../../../i18n/i18n';
 
 export class EditorDecorator {
   private readonly decorationType: TextEditorDecorationType;
@@ -57,7 +58,7 @@ export class EditorDecorator {
           module.line - 1,
           this.editorLastCharacterIndex,
         ),
-        renderOptions: getRenderOptions('Fetching issues...', this.themeColorAdapter),
+        renderOptions: getRenderOptions(t('oss.scan.fetching'), this.themeColorAdapter),
       };
     }
 

@@ -27,6 +27,7 @@ import { IVSCodeWorkspace } from '../vscode/workspace';
 import { OpenCommandIssueType, OpenIssueCommandArg } from './types';
 import { IFolderConfigs } from '../configuration/folderConfigs';
 import { IConfiguration } from '../configuration/configuration';
+import { t } from '../../../i18n/i18n';
 
 export class CommandController {
   private debouncedCommands: Record<string, _.DebouncedFunc<(...args: unknown[]) => Promise<unknown>>> = {};
@@ -111,7 +112,7 @@ export class CommandController {
       const issueArgs = arg.issue as CodeIssueCommandArg;
       const issue = this.snykCode.getIssue(issueArgs.folderPath, issueArgs.id);
       if (!issue) {
-        this.logger.warn(`Failed to find the issue ${issueArgs.id}.`);
+        this.logger.warn(t('commands.failed.to.find.issue', { id: issueArgs.id }));
         return;
       }
 
@@ -128,7 +129,7 @@ export class CommandController {
       const issue = this.ossService.getIssue(folderPath, issueArgs.id);
 
       if (!issue) {
-        this.logger.warn(`Failed to find the issue ${issueArgs.id}.`);
+        this.logger.warn(t('commands.failed.to.find.issue', { id: issueArgs.id }));
         return;
       }
 
@@ -143,7 +144,7 @@ export class CommandController {
       const issueArgs = arg.issue as IacIssueCommandArg;
       const issue = this.iacService.getIssue(issueArgs.folderPath, issueArgs.id);
       if (!issue) {
-        this.logger.warn(`Failed to find the issue ${issueArgs.id}.`);
+        this.logger.warn(t('commands.failed.to.find.issue', { id: issueArgs.id }));
         return;
       }
 

@@ -1,0 +1,106 @@
+{
+  "oss.welcome.message": "Welcome to Snyk! Check out our dashboard to start analyzing your code",
+  "oss.welcome.button": "Check it out",
+  
+  "oss.scan.started": "Open Source Security test started.",
+  "oss.scan.finished": "Open Source Security test finished for \"{projectName}\".",
+  "oss.scan.failed": "Open Source Security test failed.",
+  "oss.scan.failed.path": "Open Source Security test failed for \"{path}\".",
+  "oss.scan.running": "Scanning...",
+  "oss.scan.fetching": "Fetching issues...",
+  "oss.scan.complete": "Scan complete",
+  
+  "oss.analysis.scan.failed": "Scan failed",
+  "oss.analysis.no.workspace.trust": "No workspace folder was granted trust",
+  "oss.analysis.click.to.problem": "Click here to see the problem.",
+  "oss.analysis.duration": "Analysis finished at {time}, {day}",
+  "oss.analysis.no.workspace.trust.description": "None of workspace folders were trusted. If you trust the workspace, you can add it to the list of trusted folders in the extension settings, or when prompted by the extension next time.",
+  "oss.analysis.all.severity.filters.disabled": "Please enable severity filters to see the results.",
+  
+  "oss.issues.congrats.none.found": "✅ Congrats! No issues found!",
+  "oss.issues.congrats.no.open.found": "✅ Congrats! No open issues found!",
+  "oss.issues.open.disabled": "Open issues are disabled!",
+  "oss.issues.no.ignored": "✋ No ignored issues, open issues are disabled",
+  "oss.issues.open.and.ignored.disabled": "Open and Ignored issues are disabled!",
+  "oss.issues.no.fixable": "There are no issues fixable by Snyk Agent Fix.",
+  "oss.issues.all.view.options.disabled": "Adjust your settings to view Open or Ignored issues.",
+  "oss.issues.open.view.option.disabled": "Adjust your settings to view Open issues.",
+  "oss.issues.ignored.view.option.disabled": "Adjust your settings to view Ignored issues.",
+  "oss.issues.open.count": "{count} open issue{s}",
+  "oss.issues.ignored.count": "{count} ignored issue{s}",
+  "oss.issues.open.and.ignored": "✋ {openText} & {ignoredText}",
+  "oss.issues.open.only": "✋ {openText}",
+  "oss.issues.ignored.only": "✋ {ignoredText}, open issues are disabled",
+  
+  "oss.vuln.count.inline.format": "Issues: {count} | High: {high}, Medium: {medium}, Low: {low}",
+  
+  "oss.error.suggestion.view.show.failed": "Failed to show Snyk OSS suggestion view",
+  "oss.error.suggestion.view.message.handling.failed": "Failed to handle message from Snyk OSS suggestion view {message}",
+  
+  "oss.test.view.results": "View results",
+  "oss.test.hide": "Don't show again",
+  "oss.test.run": "Run scan for Open Source security issues.",
+  
+  "oss.notification.show.documentation": "Show Documentation",
+  "oss.notification.error.handling": "error occurred during error handling",
+  
+  "oss.cooking.dependencies": "Scanning...",
+  
+  "code.scan.started": "Code analysis started.",
+  "code.scan.finished": "Code analysis finished.",
+  "code.scan.failed": "Code analysis failed. Request ID: {requestId}",
+  "code.scan.temporarily.failed": "Snyk Code is temporarily unavailable.",
+  "code.scan.retry": "We are automatically retrying to connect...",
+  "code.scan.run": "Run scan for Code vulnerabilites and issues.",
+  
+  "code.error.suggestion.view.show.failed": "Failed to show Snyk Code suggestion view",
+  "code.error.suggestion.view.message.handling.failed": "Failed to handle message from Snyk Code suggestion view {message}",
+  
+  "code.ignore.base.comment": "deepcode ignore",
+  "code.ignore.reason.tip": "<please specify a reason of ignoring this>",
+  "code.ignore.action.name": "Ignore this particular suggestion (Snyk)",
+  "code.ignore.file.action.name": "Ignore this suggestion in current file (Snyk)",
+  "code.diagnostics.oss.collection.name": "Snyk Open Source Security",
+  "code.diagnostics.oss.collection.name.ls": "Snyk Open Source",
+  "code.webview.panel.security.title": "Snyk Code Issue",
+  
+  "iac.scan.run": "Run scan for Configuration issues.",
+  "iac.error.suggestion.view.show.failed": "Failed to show Snyk IaC suggestion view",
+  
+  "general.snyk.name": "Snyk Security",
+  "general.extension.name": "Snyk Vulnerability Scanner",
+  
+  "errors.login.status": "Failed to check user session on server",
+  "errors.filters.files": "Failed fetching filters files for bundles from server",
+  "errors.analyse": "Analyse request failed",
+  "errors.failed.analysis": "Failed executing analysis",
+  "errors.failed.execution": "Failed extension pipeline execution",
+  "errors.failed.execution.debounce": "Failed extension pipeline execution after debounce",
+  "errors.undefined.error": "Unrecognized error",
+  "errors.watch.file.before.extend.bundle": "Failed on watching file changes before extending bundle",
+  "errors.update.review.positions": "Failed to update review results positions while editing file",
+  "errors.error.report.fail": "Failed to send error report",
+  "errors.modified.file": "Failed to handle changes on file of type {type}",
+  "errors.command": "Failed to execute {type} command",
+  "errors.config.watcher": "Failed to handle configuration update",
+  "errors.loading.badge": "Failed to set loading badge icon",
+  "errors.welcome.notification": "Failed to handle welcome notification",
+  "errors.check.advanced.mode": "Failed to check advanced mode",
+  
+  "learn.get.lesson.error": "Failed to get lesson",
+  "learn.lesson.button.title": "Learn about this issue",
+  
+  "configuration.branch.not.exist": "The chosen branch name doesn't exist.",
+  "configuration.select.reference.folder": "Select a reference folder for net-new issue scanning",
+  
+  "commands.failed.to.find.issue": "Failed to find the issue {id}.",
+  "commands.error.counting.module.issues": "Error counting module issues: {error}",
+  
+  "codeaction.ignore.issue": "Ignore issue",
+  "codeaction.show.suggestion": "Show this suggestion (Snyk)",
+  
+  "severity.critical": "Critical",
+  "severity.high": "High", 
+  "severity.medium": "Medium",
+  "severity.low": "Low"
+}

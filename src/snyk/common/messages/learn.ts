@@ -1,4 +1,6 @@
+import { t } from '../../../i18n/i18n';
+
 export const messages = {
-  getLessonError: 'Failed to get Snyk Learn lesson',
-  lessonButtonTitle: 'Learn about this issue',
+  getLessonError: t('learn.get.lesson.error'),
+  lessonButtonTitle: t('learn.lesson.button.title'),
 };

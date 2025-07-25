@@ -16,6 +16,7 @@ import { ILog } from '../../common/logger/interfaces';
 import { FEATURE_FLAGS } from '../../common/constants/featureFlags';
 import { SNYK_NAME_EXTENSION, SNYK_PUBLISHER } from '../../common/constants/general';
 import { TreeNode } from '../../common/views/treeNode';
+import { t } from '../../../i18n/i18n';
 
 export class IssueTreeProvider extends ProductIssueTreeProvider<CodeIssueData> {
   constructor(
@@ -148,28 +149,34 @@ export class IssueTreeProvider extends ProductIssueTreeProvider<CodeIssueData> {
     const showingOpen = this.configuration.issueViewOptions.openIssues;
     const showingIgnored = this.configuration.issueViewOptions.ignoredIssues;
 
-    const openIssuesText = `${openIssueCount} open issue${openIssueCount === 1 ? '' : 's'}`;
-    const ignoredIssuesText = `${ignoredIssueCount} ignored issue${ignoredIssueCount === 1 ? '' : 's'}`;
+    const openIssuesText = t('oss.issues.open.count', { 
+      count: openIssueCount, 
+      s: openIssueCount === 1 ? '' : 's' 
+    });
+    const ignoredIssuesText = t('oss.issues.ignored.count', { 
+      count: ignoredIssueCount, 
+      s: ignoredIssueCount === 1 ? '' : 's' 
+    });
 
     if (showingOpen && showingIgnored) {
       if (totalIssueCount === 0) {
         return analysisMessages.congratsNoIssuesFound;
       } else {
-        return `✋ ${openIssuesText} & ${ignoredIssuesText}`;
+        return t('oss.issues.open.and.ignored', { openText: openIssuesText, ignoredText: ignoredIssuesText });
       }
     }
     if (showingOpen) {
       if (openIssueCount === 0) {
         return analysisMessages.congratsNoOpenIssuesFound;
       } else {
-        return `✋ ${openIssuesText}`;
+        return t('oss.issues.open.only', { openText: openIssuesText });
       }
     }
     if (showingIgnored) {
       if (ignoredIssueCount === 0) {
         return analysisMessages.noIgnoredIssues;
       } else {
-        return `✋ ${ignoredIssuesText}, open issues are disabled`;
+        return t('oss.issues.ignored.only', { ignoredText: ignoredIssuesText });
       }
     }
     return analysisMessages.openAndIgnoredIssuesAreDisabled;

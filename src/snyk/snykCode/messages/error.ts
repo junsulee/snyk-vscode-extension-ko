@@ -1,6 +1,8 @@
+import { t } from '../../../i18n/i18n';
+
 export const messages = {
-  suggestionViewShowFailed: 'Failed to show Snyk Code suggestion view',
+  suggestionViewShowFailed: t('code.error.suggestion.view.show.failed'),
 
   suggestionViewMessageHandlingFailed: (msg: string): string =>
-    `Failed to handle message from Snyk Code suggestion view ${msg}`,
+    t('code.error.suggestion.view.message.handling.failed', { message: msg }),
 };
