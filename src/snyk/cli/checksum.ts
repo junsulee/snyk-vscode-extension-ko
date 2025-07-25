@@ -18,7 +18,7 @@ export class Checksum {
   }
 
   update(buffer: Buffer): void {
-    this.hash.update(buffer);
+    this.hash.update(new Uint8Array(buffer));
   }
 
   digest(): Checksum {
