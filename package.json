@@ -2,7 +2,7 @@
   "name": "snyk-vulnerability-scanner",
   "//": "Changing display name requires change in general.ts",
   "displayName": "Snyk Security",
-  "version": "2.23.0",
+  "version": "2.23.0-ko",
   "description": "Easily find and fix issues in your code, open source dependencies, infrastructure as code configurations with fast and accurate scans.",
   "icon": "media/images/readme/snyk_extension_icon.png",
   "publisher": "OSBC",
